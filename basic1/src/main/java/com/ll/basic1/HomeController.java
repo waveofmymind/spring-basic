@@ -2,12 +2,14 @@ package com.ll.basic1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
 
-    private static int a = 0;
+    private static int n = 0;
 
     @GetMapping("/home/main")
     @ResponseBody
@@ -29,9 +31,14 @@ public class HomeController {
 
     @GetMapping("/home/increase")
     @ResponseBody
-    public String increase() {
+    public int increase() {
 
-        return String.valueOf(a++);
+        return n++;
+    }
 
+    @GetMapping("/home/plus")
+    @ResponseBody
+    public int plus(@RequestParam int a, @RequestParam int b) {
+        return a+b;
     }
 }

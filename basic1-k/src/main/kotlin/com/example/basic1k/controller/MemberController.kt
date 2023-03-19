@@ -8,4 +8,8 @@ class MemberController {
     fun memberTest() : String {
         return "안녕"
     }
+
+    fun memberTest2() : String {
+        return "안녕하세요"
+    }
 }
